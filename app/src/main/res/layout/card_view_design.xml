@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="UserId"
+            type="com.example.mvvm_database_task.RegisterEntity" />
+
+        <variable
+            name="Password"
+            type="com.example.mvvm_database_task.RegisterEntity" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{UserId.Username,default = UserId}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:text="@{Password.Password,default = Password}"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchFragment">
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.mvvm_database_task.LaunchFragment"
+        android:label="fragment_launch"
+        tools:layout="@layout/fragment_launch" >
+        <action
+            android:id="@+id/action_launchFragment_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
+        <action
+            android:id="@+id/action_launchFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.example.mvvm_database_task.CreateUserFragment"
+        android:label="fragment_create_user"
+        tools:layout="@layout/fragment_create_user" >
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mvvm_database_task.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.example.mvvm_database_task.UserListFragment"
+        android:label="fragment_user_list"
+        tools:layout="@layout/fragment_user_list" >
+        <action
+            android:id="@+id/action_userListFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.mvvm_database_task.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.mvvm_database_task.RegisterEntity" />
+    </fragment>
+</navigation>
